@@ -1,5 +1,15 @@
 # CW2SoftwareGroupProject
 
+A Django web application built for the 5COSC021W Software Development Group Project.
+
+## 👥 Team Members & Branches
+
+| Student | Module   | Branch        |
+|--------|----------|--------------|
+| S1     | Teams    | s1-teams     |
+| S3     | Messages | s3-messages  |
+| S4     | Schedule | s4-schedule  |
+| S5     | Reports  | s5-reports   |
 ## How to Run
 
 1. Clone the repository
