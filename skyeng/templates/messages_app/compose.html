@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkyEng - Compose</title>
+    <link rel="stylesheet" href="{% static 'css/messCss.css' %}">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="topnav">
+    <span class="logo">SkyEng</span>
+    <a href="/">Dashboard</a>
+    <a href="/teams/">Teams</a>
+    <a href="/organisation/">Organisation</a>
+    <a href="/messages_app/" class="active">Messages</a>
+    <a href="/schedule/">Schedule</a>
+    <a href="/reports/">Reports</a>
+    <a href="/settings/" class="settings-btn">⚙ Settings</a>
+    <div class="avatar">JD</div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+        <span class="logo-side">SkyEng</span>
+        <span class="section-label">Main Menu</span>
+        <a href="/">Dashboard</a>
+        <a href="/teams/">Teams</a>
+        <a href="/organisation/">Organisation</a>
+        <a href="/messages_app/" class="active">Messages <span class="badge-side">3</span></a>
+        <a href="/schedule/">Schedule</a>
+        <a href="/reports/">Reports</a>
+        <span class="section-label">Account</span>
+        <a href="/profile/">My Profile</a>
+        <a href="/logout/">Log Out</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="page-header">
+            <h1>Messages — <span>COMPOSE NEW MESSAGE</span></h1>
+        </div>
+
+        <div class="messages-container">
+
+            <!-- FOLDER SIDEBAR -->
+            <div class="folder-sidebar">
+                <a href="/messages_app/compose/" class="new-msg-btn">+ New Draft</a>
+                <span class="folder-label">Folders</span>
+                <a href="/messages_app/inbox/">Inbox <span class="folder-badge">3</span></a>
+                <a href="/messages_app/sent/">Sent</a>
+                <a href="/messages_app/drafts/">Drafts <span class="folder-badge orange">1</span></a>
+                <a href="/messages_app/trash/">Trash</a>
+            </div>
+
+            <!-- COMPOSE FORM -->
+            <div class="compose-form">
+                <input type="text" placeholder="TO: Name">
+                <input type="text" placeholder="SUBJECT">
+                <textarea placeholder="Write your message here..."></textarea>
+                <div class="detail-actions">
+                    <a href="#" class="btn btn-primary">Send</a>
+                    <a href="#" class="btn btn-secondary">Save Draft</a>
+                    <a href="#" class="btn btn-danger">Discard</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-note">
+            Compose — Fill in recipient, subject and body then click Send or Save Draft.
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
