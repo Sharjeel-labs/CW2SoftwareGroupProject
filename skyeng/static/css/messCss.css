@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SkyEng - Inbox</title>
-    <link rel="stylesheet" href="{% static 'css/messCss.css' %}">
+    <title>SkyEng - Messages</title>
+    <link rel="stylesheet" href="{% static 'css/messages.css' %}">
 </head>
 <body>
 
@@ -42,22 +42,14 @@
             <!-- FOLDER SIDEBAR -->
             <div class="folder-sidebar">
                 <a href="/messages/compose/" class="new-btn">+ New Draft</a>
-                <a href="/messages/inbox/" class="active">Inbox <span class="badge">3</span></a>
-                <a href="/messages/sent/">Sent</a>
-                <a href="/messages/drafts/">Drafts</a>
-                <a href="/messages/trash/">Trash</a>
+                <a href="/messages/inbox/" {% if active == 'inbox' %}class="active"{% endif %}>Inbox <span class="badge">3</span></a>
+                <a href="/messages/sent/" {% if active == 'sent' %}class="active"{% endif %}>Sent</a>
+                <a href="/messages/drafts/" {% if active == 'drafts' %}class="active"{% endif %}>Drafts</a>
+                <a href="/messages/trash/" {% if active == 'trash' %}class="active"{% endif %}>Trash</a>
             </div>
 
-            <!-- MESSAGE LIST -->
-            <div class="message-list">
-                <div class="message-list-header">Inbox</div>
-                <p class="empty-state">No messages yet.</p>
-            </div>
-
-            <!-- MESSAGE DETAIL -->
-            <div class="message-detail">
-                <p class="empty-state">Select a message to read it.</p>
-            </div>
+            <!-- PAGE CONTENT GOES HERE -->
+            {% block content %}{% endblock %}
 
         </div>
     </div>
