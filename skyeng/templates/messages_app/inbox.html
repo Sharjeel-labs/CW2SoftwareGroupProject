@@ -16,6 +16,8 @@
     <a href="/messages/" class="active">Messages</a>
     <a href="/schedule/">Schedule</a>
     <a href="/reports/">Reports</a>
+    <a href="/settings/" class="settings-btn">⚙ Settings</a>
+    <div class="avatar">JD</div>
 </div>
 
 <!-- LAYOUT -->
@@ -23,45 +25,95 @@
 
     <!-- LEFT SIDEBAR -->
     <div class="sidebar">
+        <span class="logo-side">SkyEng</span>
         <span class="section-label">Main Menu</span>
-        <a href="/">Dashboard</a>
-        <a href="/teams/">Teams</a>
-        <a href="/organisation/">Organisation</a>
-        <a href="/messages/" class="active">Messages</a>
-        <a href="/schedule/">Schedule</a>
-        <a href="/reports/">Reports</a>
+        <a href="/">📊 Dashboard</a>
+        <a href="/teams/">👥 Teams</a>
+        <a href="/organisation/">🏢 Organisation</a>
+        <a href="/messages/" class="active">✉ Messages <span class="badge-side">3</span></a>
+        <a href="/schedule/">📅 Schedule</a>
+        <a href="/reports/">📋 Reports</a>
         <span class="section-label">Account</span>
-        <a href="/profile/">My Profile</a>
-        <a href="/logout/">Log Out</a>
+        <a href="/profile/">👤 My Profile</a>
+        <a href="/logout/">🔒 Log Out</a>
     </div>
 
     <!-- MAIN -->
     <div class="main">
+
+        <div class="page-header">
+            <h1>Messages — <span>INBOX</span></h1>
+            <a href="/messages/compose/" class="new-draft-btn">+ New Draft</a>
+        </div>
+
+        <div class="search-bar">
+            <span>🔍</span>
+            <input type="text" placeholder="Search inbox...">
+        </div>
+
         <div class="messages-container">
 
             <!-- FOLDER SIDEBAR -->
             <div class="folder-sidebar">
-                <a href="/messages/compose/" class="new-btn">+ New Draft</a>
-                <a href="/messages/inbox/" class="active">Inbox <span class="badge">3</span></a>
-                <a href="/messages/sent/">Sent</a>
-                <a href="/messages/drafts/">Drafts</a>
-                <a href="/messages/trash/">Trash</a>
+                <a href="/messages/compose/" class="new-msg-btn">+ New Draft</a>
+                <span class="folder-label">Folders</span>
+                <a href="/messages_app/inbox/" class="active">📥 Inbox <span class="folder-badge">3</span></a>
+                <a href="/messages/sent/">📤 Sent</a>
+                <a href="/messages/drafts/">💾 Drafts <span class="folder-badge orange">1</span></a>
+                <a href="/messages/trash/">🗑 Trash</a>
             </div>
 
             <!-- MESSAGE LIST -->
             <div class="message-list">
                 <div class="message-list-header">Inbox</div>
-                <p class="empty-state">No messages yet.</p>
+                <a href="#" class="message-item">
+                    <div class="top-row">
+                        <span class="sender">Sender Subject Body</span>
+                        <span class="time">10:42</span>
+                    </div>
+                    <div class="subject">RE :Subject</div>
+                </a>
+                <a href="#" class="message-item">
+                    <div class="top-row">
+                        <span class="sender">Sender Subject Body</span>
+                        <span class="time">Yesterday</span>
+                    </div>
+                    <div class="subject">RE :Subject</div>
+                </a>
+                <a href="#" class="message-item">
+                    <div class="top-row">
+                        <span class="sender">Sender Subject Body</span>
+                        <span class="time">Mon</span>
+                    </div>
+                    <div class="subject">RE :Subject</div>
+                </a>
             </div>
 
             <!-- MESSAGE DETAIL -->
             <div class="message-detail">
-                <p class="empty-state">Select a message to read it.</p>
+                <div class="detail-header">
+                    <div class="subject">RE :Subject</div>
+                </div>
+                <div class="detail-meta">
+                    <span>Sender,</span>
+                    <span>reiver, date</span>
+                </div>
+                <div class="detail-body">body</div>
+                <div class="detail-actions">
+                    <a href="#" class="btn btn-dark">reply</a>
+                    <a href="#" class="btn btn-dark">foward</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
             </div>
 
         </div>
-    </div>
 
+        <div class="footer-note">
+            Inbox — Messages highlighted blue in left sidebar. reply / foward / Delete exact match.
+        </div>
+
+    </div>
 </div>
+
 </body>
 </html>
