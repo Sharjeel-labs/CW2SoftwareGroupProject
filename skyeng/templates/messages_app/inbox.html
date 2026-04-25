@@ -13,7 +13,7 @@
     <a href="/">Dashboard</a>
     <a href="/teams/">Teams</a>
     <a href="/organisation/">Organisation</a>
-    <a href="/messages/" class="active">Messages</a>
+    <a href="/messages_app/" class="active">Messages</a>
     <a href="/schedule/">Schedule</a>
     <a href="/reports/">Reports</a>
     <a href="/settings/" class="settings-btn">⚙ Settings</a>
@@ -27,15 +27,15 @@
     <div class="sidebar">
         <span class="logo-side">SkyEng</span>
         <span class="section-label">Main Menu</span>
-        <a href="/">📊 Dashboard</a>
-        <a href="/teams/">👥 Teams</a>
-        <a href="/organisation/">🏢 Organisation</a>
-        <a href="/messages/" class="active">✉ Messages <span class="badge-side">3</span></a>
-        <a href="/schedule/">📅 Schedule</a>
-        <a href="/reports/">📋 Reports</a>
+        <a href="/">Dashboard</a>
+        <a href="/teams/">Teams</a>
+        <a href="/organisation/">Organisation</a>
+        <a href="/messages_app/" class="active">Messages <span class="badge-side">3</span></a>
+        <a href="/schedule/">Schedule</a>
+        <a href="/reports/">Reports</a>
         <span class="section-label">Account</span>
-        <a href="/profile/">👤 My Profile</a>
-        <a href="/logout/">🔒 Log Out</a>
+        <a href="/profile/">My Profile</a>
+        <a href="/logout/">Log Out</a>
     </div>
 
     <!-- MAIN -->
@@ -43,7 +43,7 @@
 
         <div class="page-header">
             <h1>Messages — <span>INBOX</span></h1>
-            <a href="/messages/compose/" class="new-draft-btn">+ New Draft</a>
+            <a href="/messages_app/compose/" class="new-draft-btn">+ New Draft</a>
         </div>
 
         <div class="search-bar">
@@ -55,12 +55,12 @@
 
             <!-- FOLDER SIDEBAR -->
             <div class="folder-sidebar">
-                <a href="/messages/compose/" class="new-msg-btn">+ New Draft</a>
+                <a href="/messages_app/compose/" class="new-msg-btn">+ New Draft</a>
                 <span class="folder-label">Folders</span>
-                <a href="/messages_app/inbox/" class="active">📥 Inbox <span class="folder-badge">3</span></a>
-                <a href="/messages/sent/">📤 Sent</a>
-                <a href="/messages/drafts/">💾 Drafts <span class="folder-badge orange">1</span></a>
-                <a href="/messages/trash/">🗑 Trash</a>
+                <a href="/messages_app/inbox/" class="active">Inbox <span class="folder-badge">3</span></a>
+                <a href="/messages_app/sent/">Sent</a>
+                <a href="/messages_app/drafts/">Drafts <span class="folder-badge orange">1</span></a>
+                <a href="/messages_app/trash/">Trash</a>
             </div>
 
             <!-- MESSAGE LIST -->
@@ -98,7 +98,9 @@
                     <span>Sender,</span>
                     <span>reiver, date</span>
                 </div>
-                <div class="detail-body">body</div>
+                <div class="detail-body">
+                    body
+                </div>
                 <div class="detail-actions">
                     <a href="#" class="btn btn-dark">reply</a>
                     <a href="#" class="btn btn-dark">foward</a>
