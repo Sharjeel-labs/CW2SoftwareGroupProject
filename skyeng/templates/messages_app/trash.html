@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SkyEng - Trash</title>
+    <link rel="stylesheet" href="{% static 'css/messCss.css' %}">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="topnav">
+    <span class="logo">SkyEng</span>
+    <a href="/">Dashboard</a>
+    <a href="/teams/">Teams</a>
+    <a href="/organisation/">Organisation</a>
+    <a href="/messages_app/" class="active">Messages</a>
+    <a href="/schedule/">Schedule</a>
+    <a href="/reports/">Reports</a>
+    <a href="/settings/" class="settings-btn">⚙ Settings</a>
+    <div class="avatar">JD</div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+        <span class="logo-side">SkyEng</span>
+        <span class="section-label">Main Menu</span>
+        <a href="/">Dashboard</a>
+        <a href="/teams/">Teams</a>
+        <a href="/organisation/">Organisation</a>
+        <a href="/messages_app/" class="active">Messages <span class="badge-side">3</span></a>
+        <a href="/schedule/">Schedule</a>
+        <a href="/reports/">Reports</a>
+        <span class="section-label">Account</span>
+        <a href="/profile/">My Profile</a>
+        <a href="/logout/">Log Out</a>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="page-header">
+            <h1>Messages — <span>TRASH</span></h1>
+            <a href="/messages_app/compose/" class="new-draft-btn">+ New Draft</a>
+        </div>
+
+        <div class="messages-container">
+
+            <!-- FOLDER SIDEBAR -->
+            <div class="folder-sidebar">
+                <a href="/messages_app/compose/" class="new-msg-btn">+ New Draft</a>
+                <span class="folder-label">Folders</span>
+                <a href="/messages_app/inbox/">Inbox <span class="folder-badge">3</span></a>
+                <a href="/messages_app/sent/">Sent</a>
+                <a href="/messages_app/drafts/">Drafts</a>
+                <a href="/messages_app/trash/" class="active">Trash</a>
+            </div>
+
+            <!-- MESSAGE LIST -->
+            <div class="message-list">
+                <div class="message-list-header">Trash</div>
+                <a href="#" class="message-item">
+                    <div class="top-row">
+                        <span class="sender">Recipent Subject Body.</span>
+                        <span class="time"></span>
+                    </div>
+                    <div class="subject">RE :Subject</div>
+                </a>
+                <a href="#" class="message-item">
+                    <div class="top-row">
+                        <span class="sender">Recipent Subject Body.</span>
+                        <span class="time"></span>
+                    </div>
+                    <div class="subject">RE :Subject</div>
+                </a>
+            </div>
+
+            <!-- MESSAGE DETAIL -->
+            <div class="message-detail">
+                <div class="detail-header">
+                    <div class="subject">RE :Subject</div>
+                    <span class="deleted-badge">🗑 DELETED</span>
+                </div>
+                <div class="detail-meta">
+                    <span>Sender, Date, Auto-delte 30 days</span>
+                </div>
+                <div class="detail-body">
+                    body
+                </div>
+                <div class="detail-actions">
+                    <a href="#" class="btn btn-primary">Restore</a>
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-note">
+            Trash — Messages are auto-deleted after 30 days.
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
