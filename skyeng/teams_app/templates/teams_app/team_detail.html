@@ -1,0 +1,96 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+
+    <a href="{% url 'teams' %}" class="btn">
+        ⬅ Back to Team Directory
+    </a>
+    <!-- Team Name Card-->
+    <div class="card shadow-sm mb-4">
+        <div class="container mt-3">
+            <h2><strong>{{ team.name }}</strong></h2>
+        </div>
+
+        <div class="container">
+            <p>{{ team.department.name }} <b>·</b> Led by {{ team.leader }} <b>·</b> {% if team.active %}
+                    <span class="badge bg-success">Active</span>
+                {% else %}
+                    <span class="badge bg-danger">Inactive</span>
+                {% endif %}</p>
+            <p>
+                <a href="#" class="btn btn-primary mb-3">📅 Schedule Meeting </a>
+                <a href="#" class ="btn btn-secondary mb-3">✉️ Email Team </a>
+            </p>
+            
+        </div>
+    </div>
+    <!--Team Members & Team Skills Row-->
+    <div class="row mb-4">
+
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h4>👥 Team Members</h4>
+
+                        <ul class ="list-group list-group-flush">
+                            {% for enginner in engineers %}
+                                <li class ="list-group-item">{{ enginner.name }}</li>
+                            {% endfor %}
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h4>💪 Team Skills</h4>
+                    {% for skill in skills %}
+                        <span class="badge bg-light text-dark border me-2 mb-2">
+                            {{ skill }}
+                        </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Upstream Dependencies & Downstream Dependencies Row-->
+    <div class="row mb-4">
+
+        <div class ="col-md-6">
+            <div class = "card shadow-sm h-100">
+                <div class="card-body">
+                    <h4>⬆️ Upstream Dependencies</h4>
+                    <ul class="list-group list-group-flush">
+                        {% for dependency in upstream %}
+                            <li class="list-group-item">
+                                {{ dependency.name }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class ="col-md-6">
+            <div class = "card shadow-sm h-100">
+                <div class="card-body">
+                    <h4>⬇️ Downstream Dependencies</h4>
+                    <ul class="list-group list-group-flush">
+                        {% for dependency in downstream %}
+                            <li class="list-group-item">
+                                {{ dependency.name }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+{% endblock %}

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Team, Department, Engineer
 
 # Create your views here.
 
@@ -27,3 +28,25 @@ def teams(request):
     }
 
     return render(request, 'teams_app/teams.html', context)
+
+def team_detail(request, team_id):
+    team = get_object_or_404(Team, id=team_id)
+
+    engineers = team.engineer_set.all()
+
+    skills = []
+    if team.skills:
+        skills = [skill.strip() for skill in team.skills.split(",")]
+
+    downstream = team.downstream.all()
+    upstream = team.upstream.all()
+
+    context = {
+        'team': team,
+        'engineers': engineers,
+        'skills': skills,
+        'downstream': downstream,
+        'upstream': upstream,
+    }
+
+    return render(request, 'teams_app/team_detail.html', context)

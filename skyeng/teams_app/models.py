@@ -22,6 +22,14 @@ class Team(models.Model):
         related_name='leads_team' #allows engineer to view team that it leads
     )
     active = models.BooleanField(default=True)
+    skills = models.TextField(blank=True)
+
+    downstream = models.ManyToManyField(
+        'self', 
+        symmetrical=False,
+        blank=True,
+        related_name='upstream'
+    )
 
     def __str__(self):
         return self.name
