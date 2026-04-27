@@ -7,7 +7,6 @@
 </head>
 <body>
 
-<!-- TOP NAV -->
 <div class="topnav">
     <span class="logo">SkyEng</span>
     <a href="/">Dashboard</a>
@@ -53,11 +52,19 @@
             <div class="compose-form">
                 <form method="POST">
                     {% csrf_token %}
+
+                    {% if error %}
+                    <p style="color:red; font-size:13px; padding:4px 0;">{{ error }}</p>
+                    {% endif %}
+
                     <input type="text" name="receiver" placeholder="TO: Username" required>
                     <input type="text" name="subject" placeholder="SUBJECT" required>
                     <textarea name="body" placeholder="Write your message here..." required></textarea>
+
                     <div class="detail-actions">
-                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="submit" name="action" value="send" class="btn btn-primary">Send</button>
+                        <button type="submit" name="action" value="draft" class="btn btn-secondary">Save Draft</button>
+                        <a href="/messages_app/inbox/" class="btn btn-danger">Discard</a>
                     </div>
                 </form>
             </div>

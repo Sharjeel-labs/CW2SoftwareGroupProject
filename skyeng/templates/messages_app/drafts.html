@@ -21,6 +21,8 @@
 </div>
 
 <div class="layout">
+
+    <!-- LEFT SIDEBAR -->
     <div class="sidebar">
         <span class="logo-side">SkyEng</span>
         <span class="section-label">Main Menu</span>
@@ -36,6 +38,7 @@
     </div>
 
     <div class="main">
+
         <div class="page-header">
             <h1>Messages — <span>DRAFTS</span></h1>
             <a href="/messages_app/compose/" class="new-draft-btn">+ New Draft</a>
@@ -47,29 +50,34 @@
         </div>
 
         <div class="messages-container">
+
+            <!-- FOLDER SIDEBAR -->
             <div class="folder-sidebar">
                 <a href="/messages_app/compose/" class="new-msg-btn">+ New Draft</a>
                 <span class="folder-label">Folders</span>
                 <a href="/messages_app/inbox/">Inbox <span class="folder-badge">3</span></a>
                 <a href="/messages_app/sent/">Sent</a>
-                <a href="/messages_app/drafts/" class="active">Drafts <span class="folder-badge orange">1</span></a>
+                <a href="/messages_app/drafts/" class="active">Drafts</a>
                 <a href="/messages_app/trash/">Trash</a>
             </div>
 
+            <!-- MESSAGE LIST -->
             <div class="message-list">
                 <div class="message-list-header">Drafts</div>
                 {% for message in messages %}
                 <a href="#" class="message-item">
                     <div class="top-row">
                         <span class="sender">To: {{ message.receiver }} (DRAFT)</span>
+                        <span class="time">{{ message.created_at|date:"H:i" }}</span>
                     </div>
                     <div class="subject">{{ message.subject }}</div>
                 </a>
                 {% empty %}
-                <p style="padding:16px; color:#aaa; font-size:13px;">No drafts</p>
+                <p style="padding:16px; color:#aaa; font-size:13px;">No drafts saved</p>
                 {% endfor %}
             </div>
 
+            <!-- MESSAGE DETAIL -->
             <div class="message-detail">
                 <div class="detail-header">
                     <div class="subject">RE :Subject</div>
@@ -77,18 +85,22 @@
                 <div class="detail-meta">
                     <span>Reciver, Last staved, Satus :Draft</span>
                 </div>
-                <div class="detail-body">body</div>
+                <div class="detail-body">
+                    body
+                </div>
                 <div class="detail-actions">
                     <a href="#" class="btn btn-primary">Send</a>
                     <a href="#" class="btn btn-secondary">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </div>
             </div>
+
         </div>
 
         <div class="footer-note">
             Drafts — Saved drafts shown here. Click Edit to continue writing.
         </div>
+
     </div>
 </div>
 
