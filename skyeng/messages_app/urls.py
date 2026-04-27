@@ -1,12 +1,4 @@
-from django.contrib import admin
-from django.urls import path, include
-from django.http import HttpResponse
-
-from django.shortcuts import render
-
-def home(request):
-    return render(request, 'home.html')
-
+from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -16,4 +8,9 @@ urlpatterns = [
     path('sent/', views.sent, name='sent'),
     path('drafts/', views.drafts, name='drafts'),
     path('trash/', views.trash, name='trash'),
+    path('delete/<int:message_id>/', views.delete_message, name='delete_message'),
+    path('view/<int:message_id>/', views.view_message, name='view_message'),
+    path('view/sent/<int:message_id>/', views.view_sent, name='view_sent'),
+    path('view/draft/<int:message_id>/', views.view_draft, name='view_draft'),
+    path('view/trash/<int:message_id>/', views.view_trash, name='view_trash'),
 ]
