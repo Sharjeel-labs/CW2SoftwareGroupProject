@@ -20,10 +20,7 @@
     <div class="avatar">JD</div>
 </div>
 
-<!-- LAYOUT -->
 <div class="layout">
-
-    <!-- LEFT SIDEBAR -->
     <div class="sidebar">
         <span class="logo-side">SkyEng</span>
         <span class="section-label">Main Menu</span>
@@ -38,9 +35,7 @@
         <a href="/logout/">Log Out</a>
     </div>
 
-    <!-- MAIN -->
     <div class="main">
-
         <div class="page-header">
             <h1>Messages — <span>SENT</span></h1>
             <a href="/messages_app/compose/" class="new-draft-btn">+ New Draft</a>
@@ -52,8 +47,6 @@
         </div>
 
         <div class="messages-container">
-
-            <!-- FOLDER SIDEBAR -->
             <div class="folder-sidebar">
                 <a href="/messages_app/compose/" class="new-msg-btn">+ New Draft</a>
                 <span class="folder-label">Folders</span>
@@ -63,33 +56,21 @@
                 <a href="/messages_app/trash/">Trash</a>
             </div>
 
-            <!-- MESSAGE LIST -->
             <div class="message-list">
                 <div class="message-list-header">Sent</div>
+                {% for message in messages %}
                 <a href="#" class="message-item">
                     <div class="top-row">
-                        <span class="sender">To: Recipent Subject Body</span>
-                        <span class="time">10:42</span>
+                        <span class="sender">To: {{ message.receiver }}</span>
+                        <span class="time">{{ message.created_at|date:"H:i" }}</span>
                     </div>
-                    <div class="subject">RE :Subject</div>
+                    <div class="subject">{{ message.subject }}</div>
                 </a>
-                <a href="#" class="message-item">
-                    <div class="top-row">
-                        <span class="sender">To: Recipent Subject Body</span>
-                        <span class="time">Yesterday</span>
-                    </div>
-                    <div class="subject">RE :Subject</div>
-                </a>
-                <a href="#" class="message-item">
-                    <div class="top-row">
-                        <span class="sender">To: Recipent Subject Body</span>
-                        <span class="time">Mon</span>
-                    </div>
-                    <div class="subject">RE :Subject</div>
-                </a>
+                {% empty %}
+                <p style="padding:16px; color:#aaa; font-size:13px;">No sent messages</p>
+                {% endfor %}
             </div>
 
-            <!-- MESSAGE DETAIL -->
             <div class="message-detail">
                 <div class="detail-header">
                     <div class="subject">RE :Subject</div>
@@ -98,21 +79,17 @@
                     <span>Sender,</span>
                     <span>reiver, date</span>
                 </div>
-                <div class="detail-body">
-                    body
-                </div>
+                <div class="detail-body">body</div>
                 <div class="detail-actions">
                     <a href="#" class="btn btn-dark">foward</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </div>
             </div>
-
         </div>
 
         <div class="footer-note">
             Sent — All sent messages shown here.
         </div>
-
     </div>
 </div>
 
