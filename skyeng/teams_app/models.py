@@ -23,6 +23,7 @@ class Team(models.Model):
     )
     active = models.BooleanField(default=True)
     skills = models.TextField(blank=True)
+    email = models.EmailField(blank=True)
 
     downstream = models.ManyToManyField(
         'self', 

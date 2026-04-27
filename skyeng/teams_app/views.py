@@ -33,6 +33,7 @@ def team_detail(request, team_id):
     team = get_object_or_404(Team, id=team_id)
 
     engineers = team.engineer_set.all()
+    engineers_count = engineers.count()
 
     skills = []
     if team.skills:
@@ -47,6 +48,7 @@ def team_detail(request, team_id):
         'skills': skills,
         'downstream': downstream,
         'upstream': upstream,
+        'engineers_count': engineers_count,
     }
 
     return render(request, 'teams_app/team_detail.html', context)
