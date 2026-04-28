@@ -8,7 +8,7 @@ from django.http import HttpResponse
 
 
 
-from .models import Team, Department, Engineer
+from .models import Team, Department, Engineer, Report
 
 class TeamAdmin(admin.ModelAdmin):
     change_list_template = "admin/reports_app/team/change_list.html"
@@ -17,4 +17,5 @@ class TeamAdmin(admin.ModelAdmin):
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Department)
 admin.site.register(Engineer)
+admin.site.register(Report)
 

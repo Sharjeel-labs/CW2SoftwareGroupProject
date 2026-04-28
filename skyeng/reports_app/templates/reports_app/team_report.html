@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+     font-family: Arial;
+     padding: 40px; 
+    }
+h1 { 
+    color: rgb(0, 0, 0);
+ }
+.box { 
+    border: 1px solid #000000;
+ padding: 20px;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Team Report</h1>
+
+<div class="box">
+    <p><strong>Name:</strong> {{ team.name }}</p>
+    <p><strong>Department:</strong> {{ team.department }}</p>
+    <p><strong>Leader:</strong> {{ team.leader }}</p>
+    <p><strong>Status:</strong>
+    {% if team.active %}
+        Active
+    {% else %}
+        Not Active
+    {% endif %}
+</p>
+    <p><strong>Skills:</strong> {{ team.skills }}</p>
+</div>
