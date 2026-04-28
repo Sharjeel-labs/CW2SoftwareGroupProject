@@ -1,0 +1,28 @@
+[
+  {
+    "model": "reports_app.department",
+    "pk": 1,
+    "fields": {
+      "name": "Department One"
+    }
+  },
+  {
+    "model": "reports_app.team",
+    "pk": 1,
+    "fields": {
+      "name": "Team One",
+      "department": 1,
+      "leader": 1,
+      "active": true,
+      "skills": "General Engineering Skills"
+    }
+  },
+  {
+    "model": "reports_app.engineer",
+    "pk": 1,
+    "fields": {
+      "name": "Engineer One",
+      "team": 1
+    }
+  }
+]

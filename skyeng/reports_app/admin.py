@@ -1,0 +1,20 @@
+from django.contrib import admin
+from django.http import FileResponse
+from django.template.loader import render_to_string
+import io
+from  django.urls import path
+from weasyprint import HTML
+from django.http import HttpResponse
+
+
+
+from .models import Team, Department, Engineer
+
+class TeamAdmin(admin.ModelAdmin):
+    change_list_template = "admin/reports_app/team/change_list.html"
+
+
+admin.site.register(Team, TeamAdmin)
+admin.site.register(Department)
+admin.site.register(Engineer)
+

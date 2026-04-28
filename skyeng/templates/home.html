@@ -42,7 +42,7 @@
 <!-- TOP NAV -->
 <div class="topnav">
     <span class="logo">SkyEng</span>
-    <a href="#" class="active">Dashboard</a>
+    <a href="{% url 'dashboard' %}" class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">Dashboard</a>
     <a href="#">Teams</a>
     <a href="#">Organisation</a>
     <a href="#">Messages</a>
