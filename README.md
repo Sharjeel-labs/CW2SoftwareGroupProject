@@ -19,7 +19,8 @@ A Django web application built for the 5COSC021W Software Development Group Proj
    `pip install django`
 # If you are running on Windows:
 Install Python Install Manager: https://apps.microsoft.com/detail/9nq7512cxl7t?hl=en-GB&gl=GB<br>
-Install MSYS2: https://www.msys2.org/#installation
+Install MSYS2: https://www.msys2.org/#installation<br>
+Inside of the MSYS2 shell, execeute: `pacman -S mingw-w64-x86_64-pango`<br>
 5. Run migrations:
    python manage.py migrate
 6. Start server:
