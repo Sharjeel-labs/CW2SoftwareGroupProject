@@ -29,6 +29,8 @@ python -m weasyprint --info`<br>
 
 # If you are on MacOS:
 Install Homebrew using the link here: https://brew.sh/ <br>
+Inside of Homebrew, Run the Command: `brew install weasyprint`
+
 
 5. Run migrations:
    python manage.py migrate
