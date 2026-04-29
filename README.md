@@ -12,7 +12,7 @@ A Django web application built for the 5COSC021W Software Development Group Proj
 | S5     | Reports  | s5-reports   |
 ## How to Run
 
-1. Clone the repository
+1. Clone the repository<br>
 `git clone https://github.com/Sharjeel-labs/SoftwareGroupProjectCW2.git`
 
 3. Install dependencies:
