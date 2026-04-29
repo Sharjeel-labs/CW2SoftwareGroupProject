@@ -15,9 +15,11 @@ A Django web application built for the 5COSC021W Software Development Group Proj
 1. Clone the repository<br>
 `git clone https://github.com/Sharjeel-labs/SoftwareGroupProjectCW2.git`
 
-3. Install dependencies:
+3. Install dependencies:<br>
    `pip install django`
-
+If you are running on Windows:
+Install Python Install Manager: https://apps.microsoft.com/detail/9nq7512cxl7t?hl=en-GB&gl=GB
+Install MSYS2: https://www.msys2.org/#installation
 5. Run migrations:
    python manage.py migrate
 6. Start server:
