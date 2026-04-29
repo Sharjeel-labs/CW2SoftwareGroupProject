@@ -36,9 +36,11 @@ Inside of Homebrew, Run the Command:<br> `brew install weasyprint`
 
 5. Run migrations:<br>
   ` python manage.py migrate`
-6. Start server:
-   python manage.py runserver 8080
-7. Open:
+6. Start server:<br>
+  `python manage.py runserver`<br>
+If you get an error message when attempting to launch the server, launch with this:
+`python manage.py runserver 8080`
+8. Open in web browser:<br>
    http://127.0.0.1:8080/
 
    ## Branching Strategy
