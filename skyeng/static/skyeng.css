@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+/* ============================================================
+   skyeng.css  –  Shared stylesheet for the SkyEng web app
+   Team E | 5COSC021W Software Development Group Project
+   ============================================================
+   HOW TO USE IN YOUR TEMPLATE:
+   1. Place this file in:  skyeng/static/skyeng.css
+   2. At the top of your HTML add:   {% load static %}
+   3. Inside <head> add:
+      <link rel="stylesheet" href="{% static 'skyeng.css' %}">
+   ============================================================ */
+
+>>>>>>> s5-reports
 /* ---------- Reset / Base ---------- */
 * {
     margin: 0;
@@ -106,4 +120,7 @@
     margin-top: 4px;
     font-size: 14px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> s5-reports

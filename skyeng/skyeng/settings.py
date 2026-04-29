@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'teams_app',
     'schedule_app',
     'accounts',
+=======
+    'reports_app',
+>>>>>>> s5-reports
 ]
 
 MIDDLEWARE = [
@@ -119,9 +123,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
 # login URL
 LOGIN_URL = 'login'
+=======
+STATICFILES_DIRS= [
+    BASE_DIR / 'static'
+]
+>>>>>>> s5-reports
