@@ -8,7 +8,8 @@
     </a>
     <form method="GET" class="d-flex">
         <div class="input-group" style="width: 300px;">
-            <input type="text" name="search" class="form-control" placeholder="🔍 Search Through Reports...">
+            <input type="text" name="search" class="form-control" placeholder="🔍 Search Through Reports..."
+             value="{{query|default:''}}">
             <button class="btn btn-primary" type="submit">GO</button>
         </div>
     </form>
@@ -22,7 +23,7 @@
             <thead class="table-light">
                 <tr>
                     <th>REPORT NAME</th>
-                    <th>CREATED BY</th>
+                    <th>DELETE REPORT</th>
                     <th style="width: 15%;">VIEW REPORT</th>
                 </tr>
             </thead>
@@ -31,7 +32,9 @@
         {% for report in reports %}
         <tr>
             <td>{{ report.name }}</td>
-            <td></td>
+            <td><a href="{% url 'delete_report' report.id %}" class="btn btn-danger" target="_blank">
+                Delete Report
+            </a></td>
             <td><a href="{{ report.file.url}}" class="btn btn-primary" target="_blank">
                 View Report
             </a></td>

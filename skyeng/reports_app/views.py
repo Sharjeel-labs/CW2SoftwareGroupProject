@@ -1,4 +1,4 @@
-from django.shortcuts import render
+
 from django.http import HttpResponse
 from weasyprint import HTML
 from django.template.loader import render_to_string
@@ -7,10 +7,10 @@ from django.shortcuts import render,get_object_or_404
 from django.shortcuts import redirect
 import io
 from django.core.files.base import ContentFile
-from django.http import FileResponse
 # Create your views here.
-def reports(request):
-    return render(request, 'reports_app/reports.html')
+
+
+
 #Used to select which team you want to create a report on
 def select_team_report(request):
     teams = Team.objects.all()
@@ -44,7 +44,7 @@ def generate_team_pdf(request, team_id):
     response["Content-Disposition"] = f'inline; filename="team_{team_id}.pdf"'
     return response
 
-#A test to see if weasyprint works:
+#A test view to see if weasyprint works, not needed to function:
 def test_pdf(request):
     html_string = """
     <h1>Report Generating test</h1>
@@ -61,9 +61,31 @@ def test_pdf(request):
 #Shows the currently existing reports
 def reports_page(request):
     reports = Report.objects.all()
+
+    query = request.GET.get("search", "")
+
+    if query:
+        reports = reports.filter(name__icontains=query)
+
+
     return render(request, "reports_app/reports.html", {
-        "reports": reports
+        "reports": reports,
+        "query":query
     })
+
+
 #Created to help view stored reports
 def view_report(request, report_id):
     return HttpResponse(f"Viewing Report {report_id}")
+
+#Created to delete reports from the report page
+def delete_report(request,report_id):
+    report = get_object_or_404(Report, id=report_id)
+
+    if report.file:
+        report.file.delete(save=False)
+
+    report.delete()
+
+    return redirect("reports")
+

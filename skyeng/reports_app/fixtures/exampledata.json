@@ -14,7 +14,8 @@
       "department": 1,
       "leader": 1,
       "active": true,
-      "skills": "Basic engineering skills."
+      "skills": "Basic engineering skills.",
+      "downstream":[2]
     }
   },
   {

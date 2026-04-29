@@ -32,4 +32,23 @@ h1 {
     {% endif %}
 </p>
     <p><strong>Skills:</strong> {{ team.skills }}</p>
+  {% if team.downstream.all %}
+<p><strong>Relationship:</strong>
+Downstream to
+{% for t in team.downstream.all %}
+    {{ t.name }}{% if not forloop.last %}, {% endif %}
+{% endfor %}
+</p>
+
+{% elif team.upstream.all %}
+<p><strong>Relationship:</strong>
+Upstream from
+{% for t in team.upstream.all %}
+    {{ t.name }}{% if not forloop.last %}, {% endif %}
+{% endfor %}
+</p>
+
+{% else %}
+<p><strong>Relationship:</strong> None</p>
+{% endif %}
 </div>
