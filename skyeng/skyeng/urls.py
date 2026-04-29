@@ -14,7 +14,8 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include('schedule_app.urls')),
     path('reports/', include('reports_app.urls')),
-]
+     path('messages_app/', include('messages_app.urls')),
+     ]
 
 #Allows for the reports page to view reports
 if settings.DEBUG:

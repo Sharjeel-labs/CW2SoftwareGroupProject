@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'schedule_app',
     'accounts',
     'reports_app',
+    'messages_app',
 ]
 
 MIDDLEWARE = [
