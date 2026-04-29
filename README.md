@@ -13,13 +13,16 @@ A Django web application built for the 5COSC021W Software Development Group Proj
 ## How to Run
 
 1. Clone the repository
-2. Install dependencies:
-   pip install django
-3. Run migrations:
+`git clone https://github.com/Sharjeel-labs/SoftwareGroupProjectCW2.git`
+
+3. Install dependencies:
+   `pip install django`
+
+5. Run migrations:
    python manage.py migrate
-4. Start server:
+6. Start server:
    python manage.py runserver 8080
-5. Open:
+7. Open:
    http://127.0.0.1:8080/
 
    ## Branching Strategy
