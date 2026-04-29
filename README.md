@@ -11,12 +11,6 @@ A Django web application built for the 5COSC021W Software Development Group Proj
 | S4     | Schedule | s4-schedule  |
 | S5     | Reports  | s5-reports   |
 ## How to Run
-
-1. Clone the repository<br>
-`git clone https://github.com/Sharjeel-labs/SoftwareGroupProjectCW2.git`
-
-3. Install dependencies:<br>
-   `pip install django`
 # Installing Weasyprint on Windows:
 Install Python Install Manager: https://apps.microsoft.com/detail/9nq7512cxl7t?hl=en-GB&gl=GB<br>
 Install MSYS2: https://www.msys2.org/#installation<br>
@@ -31,6 +25,11 @@ python -m weasyprint --info`<br>
 Install Homebrew using the link here: https://brew.sh/ <br>
 Inside of Homebrew, Run the Command: `brew install weasyprint`
 
+1. Clone the repository<br>
+`git clone https://github.com/Sharjeel-labs/SoftwareGroupProjectCW2.git`
+
+3. Install dependencies:<br>
+   `pip install django`
 
 5. Run migrations:
    python manage.py migrate
