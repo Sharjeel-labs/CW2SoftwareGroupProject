@@ -1,14 +1,19 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
-
-from django.shortcuts import render
-
-def home(request):
-    return render(request, 'home.html')
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),  
+
+    # Main dashboard (from main branch)
+    path('', views.dashboard, name='dashboard'),
+
+    # Student 3 - Messages app
     path('messages_app/', include('messages_app.urls')),
+
+    # Teams app (from main branch)
+    path('', include('teams_app.urls')),
+
+    # Accounts/login (from main branch)
+    path('', include('accounts.urls')),
 ]

@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # (Student 3 - Messages)
+    # Student 3 - Messages app
     'messages_app',
+    # Added from main - teams and accounts
+    'teams_app',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -120,4 +123,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # Static files directory
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+# Login URL
+LOGIN_URL = 'login'
