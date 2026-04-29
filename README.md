@@ -32,7 +32,7 @@ Inside of Homebrew, Run the Command:<br> `brew install weasyprint`
 3. Install dependencies:<br>
    `pip install django`
 4. Load Model Data for Reports:<br>
-`py manage.py loaddata exampledata.json`
+`python manage.py loaddata exampledata.json`
 
 5. Run migrations:<br>
   ` python manage.py migrate`
