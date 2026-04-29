@@ -120,6 +120,289 @@
     margin-top: 4px;
     font-size: 14px;
 }
+
+/* ---------- Schedule Page ---------- */
+
+/* Layout */
+.schedule-header { margin-bottom: 24px; }
+.schedule-header h2 { font-size: 24px; color: #1c1f26; }
+.schedule-header p { color: #888; font-size: 14px; margin-top: 4px; }
+
+.schedule-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+.calendar-area {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    min-width: 0;
+}
+.side-panel {
+    width: 280px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Panel boxes */
+.panel-box {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.panel-box h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1c1f26;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Meeting items */
+.meeting-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+}
+.meeting-item:last-child { border-bottom: none; }
+.meeting-title { font-weight: bold; color: #1c1f26; }
+.meeting-time { color: #2563eb; margin-top: 2px; }
+.meeting-team { color: #888; margin-top: 2px; }
+.no-meetings { color: #aaa; font-size: 13px; text-align: center; padding: 20px 0; }
+
+/* Teams legend */
+.team-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: #444;
+    border-bottom: 1px solid #f0f0f0;
+}
+.team-legend-item:last-child { border-bottom: none; }
+.team-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2563eb;
+    flex-shrink: 0;
+}
+
+/* Buttons */
+.btn-add {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn-add:hover { background: #1d4ed8; }
+.btn-submit {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 6px;
+}
+.btn-submit:hover { background: #1d4ed8; }
+
+/* Form */
+.form-group { margin-bottom: 14px; }
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+.form-group .form-control {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.form-group .form-control:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Modal */
+.meeting-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.meeting-overlay.active { display: flex; }
+.meeting-box {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 460px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+.meeting-box h3 { font-size: 18px; color: #1c1f26; margin-bottom: 20px; }
+.meeting-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+}
+.meeting-close:hover { color: #1c1f26; }
+
+/* Form layout */
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+.form-group.half {
+    flex: 1;
+}
+.field-hint {
+    display: block;
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+/* Repeat button */
+.btn-repeat {
+    width: 100%;
+    background: none;
+    border: 1px dashed #2563eb;
+    color: #2563eb;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.btn-repeat:hover { background: #eff6ff; }
+
+/* Repeat block */
+.repeat-block {
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+.repeat-row {
+    display: flex;
+    gap: 8px;
+}
+.repeat-num { width: 70px; }
+.days-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+.day-check {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #444;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+.day-check input { margin: 0; }
+
+/* Detail modal */
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.detail-color-bar {
+    width: 6px;
+    height: 36px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+.detail-header h3 {
+    font-size: 18px;
+    color: #1c1f26;
+    margin: 0;
+}
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #444;
+}
+.detail-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+}
+.detail-section { margin-top: 16px; }
+.detail-section-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+.detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.attendee-tag {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.required-tag { background: #dcfce7; color: #16a34a; }
+.optional-tag { background: #dbeafe; color: #2563eb; }
+.detail-desc-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+}
+
 <<<<<<< HEAD
 
 =======
