@@ -5,15 +5,14 @@
     <title>SkyEng - Drafts</title>
     <!-- Shared team stylesheet -->
     <link rel="stylesheet" href="{% static 'skyeng.css' %}">
-    <!-- Messages app specific styles -->
-    <!-- <link rel="stylesheet" href="{% static 'css/messCss.css' %}"> -->
 </head>
 <body>
 
 <div class="topnav">
-    <span class="logo">SkyEng</span>
+    <img src="{% static 'images/skyLogo.png' %}" alt="sky logo" class="logo-img">
     <a href="/">Dashboard</a>
     <a href="/teams/">Teams</a>
+    <a href="#">Organisation</a>
     <a href="/messages_app/" class="active">Messages</a>
     <a href="/schedule/">Schedule</a>
     <a href="/reports/">Reports</a>
@@ -24,16 +23,20 @@
 
 <div class="layout">
     <div class="sidebar">
-        <span class="logo-side">SkyEng</span>
         <span class="section-label">Main Menu</span>
-        <a href="/">Dashboard</a>
-        <a href="/teams/">Teams</a>
-        <a href="/messages_app/" class="active">Messages <span class="badge-side">3</span></a>
-        <a href="/schedule/">Schedule</a>
-        <a href="/reports/">Reports</a>
+        <a href="/">🏠 Dashboard</a>
+        <a href="/teams/">👥 Teams</a>
+        <a href="#">🏫 Organisation</a>
+        <a href="/messages_app/" class="active">✉️ Messages</a>
+        <a href="/schedule/">📅 Schedule</a>
+        <a href="/reports/">📊 Reports</a>
         <span class="section-label">Account</span>
-        <a href="/profile/">My Profile</a>
-        <a href="/logout/">Log Out</a>
+        {% if user.is_authenticated %}
+        <a href="/logout/">🚪 Log Out</a>
+        {% else %}
+        <a href="/login/">👤 Log In</a>
+        <a href="/signup/">📝 Sign Up</a>
+        {% endif %}
     </div>
 
     <div class="main">
