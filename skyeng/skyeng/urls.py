@@ -8,6 +8,7 @@ urlpatterns = [
 
     path('', views.dashboard, name='dashboard'),
     path('', include('teams_app.urls')),
+    path('', include('accounts.urls')),
 
 
 

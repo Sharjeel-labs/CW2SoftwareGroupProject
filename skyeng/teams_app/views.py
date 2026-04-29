@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Team, Department, Engineer
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -29,6 +31,7 @@ def teams(request):
 
     return render(request, 'teams_app/teams.html', context)
 
+@login_required
 def team_detail(request, team_id):
     team = get_object_or_404(Team, id=team_id)
 

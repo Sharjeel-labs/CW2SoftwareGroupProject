@@ -25,6 +25,9 @@
                 <!---https://getbootstrap.com/docs/5.3/components/modal/#how-it-works-->
                 <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#scheduleMeetingModal">📅 Schedule Meeting </button>
                 <button type="button" class="btn btn-secondary mb-3" data-bs-toggle="modal" data-bs-target="#emailTeamModal">✉️ Email Team </button>
+                {% if user.is_staff %}
+                    <a href="/admin/" class="btn btn-warning mb-3">🛠️ Edit Team Details</a>
+                {% endif %}
             </div>
             
         </div>
