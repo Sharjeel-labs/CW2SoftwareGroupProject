@@ -21,6 +21,11 @@ A Django web application built for the 5COSC021W Software Development Group Proj
 Install Python Install Manager: https://apps.microsoft.com/detail/9nq7512cxl7t?hl=en-GB&gl=GB<br>
 Install MSYS2: https://www.msys2.org/#installation<br>
 Inside of the MSYS2 shell, execeute: `pacman -S mingw-w64-x86_64-pango`<br>
+Launch Windows Command Prompt, and input:<br>
+`python -m venv venv
+venv\Scripts\activate.bat
+python -m pip install weasyprint
+python -m weasyprint --info`
 5. Run migrations:
    python manage.py migrate
 6. Start server:
