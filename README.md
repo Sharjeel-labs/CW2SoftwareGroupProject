@@ -33,10 +33,15 @@ Inside of Homebrew, Run the Command:<br> `brew install weasyprint`
    `pip install django`
 4. Load Model Data for Reports:<br>
 `python manage.py loaddata exampledata.json`
-
-5. Run migrations:<br>
+5. Create a Super User with the following details:<br>
+   `py manage.py createsuperuser`<br>
+   `Username: Admin`<br>
+   `Email: Admin@westminster.ac.uk`<br>
+   `Password: SuperAdmin123`
+   
+7. Run migrations:<br>
   ` python manage.py migrate`
-6. Start server:<br>
+8. Start server:<br>
   `python manage.py runserver`<br>
   
 If you get an error message when attempting to launch the server, launch with this:<br>
