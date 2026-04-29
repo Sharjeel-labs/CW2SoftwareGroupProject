@@ -1,6 +1,10 @@
 
 from django.http import HttpResponse
-from weasyprint import HTML
+try:
+    from weasyprint import HTML
+    WEASYPRINTWORK = True
+except ImportError:
+    WEASYPRINTWORK = False
 from django.template.loader import render_to_string
 from .models import Team, Report
 from django.shortcuts import render,get_object_or_404
@@ -23,6 +27,10 @@ def select_team_report(request):
 
 #Generates the Team report
 def generate_team_pdf(request, team_id):
+    if not WEASYPRINTWORK:
+        return HttpResponse(
+            "PDF generation is unavailble: Weasyprint is not installed on this system."
+        )
     team = Team.objects.get(id=team_id)
 
     report = Report.objects.create(
@@ -38,7 +46,7 @@ def generate_team_pdf(request, team_id):
     
     filename = f"team_{team_id}_report.pdf"
     report.file.save(filename, ContentFile(pdf))
-    report.save
+    report.save()
 
     response = HttpResponse(pdf, content_type="application/pdf")
     response["Content-Disposition"] = f'inline; filename="team_{team_id}.pdf"'
@@ -46,6 +54,10 @@ def generate_team_pdf(request, team_id):
 
 #A test view to see if weasyprint works, not needed to function:
 def test_pdf(request):
+    if not WEASYPRINTWORK:
+        return HttpResponse(
+            "PDF generation is unavailble: Weasyprint is not installed on this system."
+        )
     html_string = """
     <h1>Report Generating test</h1>
     <p>If this pdf prints, weasyprint works!</p>

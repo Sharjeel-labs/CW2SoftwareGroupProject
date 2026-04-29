@@ -3,7 +3,6 @@ from django.http import FileResponse
 from django.template.loader import render_to_string
 import io
 from  django.urls import path
-from weasyprint import HTML
 from django.http import HttpResponse
 
 
