@@ -3,6 +3,9 @@
 <html>
 <head>
     <title>SkyEng - Inbox</title>
+    <!-- Shared team stylesheet -->
+    <link rel="stylesheet" href="{% static 'skyeng.css' %}">
+    <!-- Messages app specific styles -->
     <link rel="stylesheet" href="{% static 'css/messCss.css' %}">
 </head>
 <body>
@@ -11,12 +14,12 @@
     <span class="logo">SkyEng</span>
     <a href="/">Dashboard</a>
     <a href="/teams/">Teams</a>
-    <a href="/organisation/">Organisation</a>
     <a href="/messages_app/" class="active">Messages</a>
     <a href="/schedule/">Schedule</a>
     <a href="/reports/">Reports</a>
     <a href="/settings/" class="settings-btn">⚙ Settings</a>
-    <div class="avatar">JD</div>
+    <!-- Show logged in user initials -->
+    <div class="avatar">{{ request.user.username|slice:":2"|upper }}</div>
 </div>
 
 <div class="layout">
@@ -25,7 +28,6 @@
         <span class="section-label">Main Menu</span>
         <a href="/">Dashboard</a>
         <a href="/teams/">Teams</a>
-        <a href="/organisation/">Organisation</a>
         <a href="/messages_app/" class="active">Messages <span class="badge-side">3</span></a>
         <a href="/schedule/">Schedule</a>
         <a href="/reports/">Reports</a>
@@ -49,7 +51,6 @@
         </form>
 
         <div class="messages-container">
-
             <div class="folder-sidebar">
                 <a href="/messages_app/compose/" class="new-msg-btn">+ New Draft</a>
                 <span class="folder-label">Folders</span>
@@ -77,7 +78,6 @@
                 {% empty %}
                 <p style="padding:16px; color:#aaa; font-size:13px;">No messages in inbox.</p>
                 {% endfor %}
-
             </div>
 
             <div class="message-detail">
@@ -101,7 +101,6 @@
                 </div>
                 {% endif %}
             </div>
-
         </div>
 
         <div class="footer-note">
