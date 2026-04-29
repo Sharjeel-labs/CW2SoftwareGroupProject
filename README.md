@@ -25,7 +25,8 @@ Launch Windows Command Prompt, and input:<br>
 `python -m venv venv
 venv\Scripts\activate.bat
 python -m pip install weasyprint
-python -m weasyprint --info`
+python -m weasyprint --info`<br>
+
 5. Run migrations:
    python manage.py migrate
 6. Start server:
